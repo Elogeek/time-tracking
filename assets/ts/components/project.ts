@@ -3,11 +3,20 @@
  */
 export default class Project {
 
-    public name: string;
+    public titleName: string;
 
     constructor(N: string) {
-        this.name = N;
+        this.titleName = N;
 
     }
+
+    /**
+     *  Build a project
+     */
+    build() {
+        const parent = document.querySelector(".container") as HTMLElement;
+
+    }
+
 
 }
