@@ -15,9 +15,40 @@ body {
 
 $flex: flex;
 $direction: row;
+$border: 5px solid #c7c7c7;
+
+$grey: #c7c7c7;
+$blue: #6675c6;
+$green: #71ae98;
+$red: #eb4e4e;
 
 .container {
   display: $flex;
   justify-content: space-around;
   flex-direction: $direction;
+
+  .project {
+    display: $flex;
+    border: $border;
+    background: $grey;
+      // If the brightness of the color is less than 25% === brighten the color
+      // if the brightness of the color is more than 25% === darken the color
+      @if (lightness ($grey) <25%) {
+        $color: lightness($grey, 10%)
+      }
+      @else {
+        $color: darken($grey, 10%)
+      }
+
+
+    .title {
+      margin-top: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      color: $blue;
+    }
+
+  }
+
+
 }
