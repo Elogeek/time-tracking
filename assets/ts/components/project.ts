@@ -30,6 +30,19 @@ export default class Project {
 
     }
 
+    add() {
+        let btn = document.querySelector("#btnAdd") as HTMLButtonElement;
+
+            btn.addEventListener('click', function (e) {
+                console.log('yes');
+                let input = document.querySelector('.inputTitle') as HTMLInputElement;
+                let t = document.querySelector(".newTitle") as HTMLElement;
+                t.innerHTML = input.value;
+                return t;
+            })
+        console.log('merde');
+    }
+
 }
 
 
