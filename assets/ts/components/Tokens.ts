@@ -1,4 +1,4 @@
-import Storage from './storage';
+/** import Storage from './storage';
 
 /**
  * by setting the locals to the storage generic
@@ -12,7 +12,7 @@ enum Locals {
 /**
  * I am using the singleton because I want only one instance of the Token class.
  * Adding private to the constructor will prevent the creation of an instance.
- */
+
 export default class Tokens extends Storage<Locals> {
     private static instance?: Tokens;
 
@@ -22,7 +22,7 @@ export default class Tokens extends Storage<Locals> {
 
     /**
      * Returns the cached instance or will create a new one.
-     */
+
     public static getInstance() {
         if (!this.instance) {
             this.instance = new Tokens();
@@ -34,7 +34,7 @@ export default class Tokens extends Storage<Locals> {
     /**
      *  Methods that will process our data
      *  They work with an access token.
-     */
+
     public getAccessToken() {
         return this.get(Locals.ACCESS_TOKEN);
     }
@@ -56,3 +56,4 @@ export default class Tokens extends Storage<Locals> {
     }
 
 }
+*/

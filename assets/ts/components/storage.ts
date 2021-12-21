@@ -1,6 +1,6 @@
 /**
  * Creation of the IStorage interface to use on the abstract class
- */
+
 interface IStorage {
     getItem(key : string): string | null;
     setItem(key: string, value: string) : void;
@@ -10,7 +10,7 @@ interface IStorage {
 /**
  * Creation of the abstract class which must have the properties defined in the IStorage interface
  * (here: getItem, setItem, removeItem)
- */
+
 export default abstract class Storage<T extends string> {
     storage: IStorage;
 
@@ -30,7 +30,7 @@ export default abstract class Storage<T extends string> {
      * Delete a single element in the localstorage
      * @param key
      * @protected
-     */
+
     protected clearItem(key: T): void {
         this.storage.removeItem(key);
     }
@@ -39,9 +39,10 @@ export default abstract class Storage<T extends string> {
      * Delete all data in the localstorage
      * @param keys
      * @protected
-     */
+
     protected clearItems(keys: T[]): void {
         keys.forEach((key) => this.clearItem(key));
     }
 
 }
+ */

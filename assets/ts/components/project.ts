@@ -1,9 +1,8 @@
-import Tokens from './Tokens';
-import Storage from "./storage";
+
 /**
  *  Class constructor project
  */
-export default class Project {
+export class Project {
 
     public titleName: string;
     public parent: HTMLElement;
@@ -35,22 +34,28 @@ export default class Project {
 
     add() {
         let btn = document.querySelector("#btnAdd") as HTMLButtonElement;
+        let array =  [] = [localStorage.getItem('projects')];
 
             btn.addEventListener('click', function (e) {
-                console.log('yes');
+
                 let input = document.querySelector('.inputTitle') as HTMLInputElement;
-                let t = document.querySelector(".newTitle") as HTMLElement;
-                t.innerHTML = input.value;
 
-                const tokens = Tokens.getInstance();
-                tokens.setAccessToken('access-token');
-                const accessToken = tokens.getAccessToken();
-                console.log(accessToken);
-                //tokens.clear();
+                input.addEventListener("keypress",(evt) => {
 
-                return t;
+                    if(evt.key === 'Enter') {
+                        let t = document.querySelector(".newTitle") as HTMLElement;
+                        t.innerHTML = input.value;
+                        console.log(input.value);
+                        return t;
+                    }
+
+                    array.push(input.value);
+                    localStorage.setItem('newProject',JSON.stringify(array))
+
+                })
+
             })
-        console.log('merde');
+        console.log('merde, une erreur est survenu !');
     }
 
 }
