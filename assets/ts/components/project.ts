@@ -1,3 +1,5 @@
+import Tokens from './Tokens';
+import Storage from "./storage";
 /**
  *  Class constructor project
  */
@@ -10,6 +12,7 @@ export default class Project {
         this.parent = document.querySelector('.container') as HTMLElement;
         this.titleName = N;
         this.build();
+        this.add();
     }
 
 
@@ -38,6 +41,13 @@ export default class Project {
                 let input = document.querySelector('.inputTitle') as HTMLInputElement;
                 let t = document.querySelector(".newTitle") as HTMLElement;
                 t.innerHTML = input.value;
+
+                const tokens = Tokens.getInstance();
+                tokens.setAccessToken('access-token');
+                const accessToken = tokens.getAccessToken();
+                console.log(accessToken);
+                //tokens.clear();
+
                 return t;
             })
         console.log('merde');
