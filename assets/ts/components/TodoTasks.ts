@@ -21,9 +21,12 @@ export const TodoTasks = {
         // @ts-ignore
         this.parent.append(container);
 
+        let divList = document.createElement("div") as HTMLDivElement;
+        divList.className = "todoTasks";
         let list = document.createElement("p") as HTMLParagraphElement;
-        list.className = "todoTasks";
-        container.append(list);
+
+        container.append(divList);
+        divList.appendChild(list);
 
         /** chrono here*/
 

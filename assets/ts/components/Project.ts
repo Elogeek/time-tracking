@@ -1,9 +1,9 @@
-// @ts-ignore
-import {IconsTodo} from "./TodoTasks";
+import {IconsTask} from "./IconsTask";
 
 /**
  *  Class constructor project
  */
+
 export class Project {
 
     public titleName: string;
@@ -26,8 +26,11 @@ export class Project {
         let divTitle = document.createElement('div');
         let h2 = document.createElement('h2');
 
+
         div.className = "project";
         divTitle.className = "title";
+
+        new IconsTask(div);
         this.parent.appendChild(div);
         div.appendChild(divTitle);
         divTitle.appendChild(h2);
@@ -53,8 +56,6 @@ export class Project {
 
                     array.push(input.value);
                     localStorage.setItem('newProject',JSON.stringify(array));
-                    // Here icons: trash, eye, add task
-                    new IconsTodo();
                 })
 
             })
