@@ -1,3 +1,5 @@
+// @ts-ignore
+import {IconsTodo} from "./TodoTasks";
 
 /**
  *  Class constructor project
@@ -50,8 +52,9 @@ export class Project {
                     }
 
                     array.push(input.value);
-                    localStorage.setItem('newProject',JSON.stringify(array))
-
+                    localStorage.setItem('newProject',JSON.stringify(array));
+                    // Here icons: trash, eye, add task
+                    new IconsTodo();
                 })
 
             })

@@ -10,6 +10,10 @@ html {
 }
 
 body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 5rem;
 }
 
@@ -21,27 +25,60 @@ $blue: #6675c6;
 $green: #71ae98;
 $red: #eb4e4e;
 
+
+@mixin templateTitle {
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 0.2px;
+  color: $blue;
+  padding: 0.5em;
+  position: absolute;
+  width: 83%;
+}
+
 .container {
   display: $flex;
   justify-content: space-around;
   flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem 0;
 
   .project {
     display: $flex;
     border: $border;
     background: lighten(#c7c7c7,10%);
-    margin-top: 3rem;
+    width: 100%;
+    border-radius: 10px;
+    margin: 25px;
 
     .title {
-      margin-top: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2px;
-      color: $blue;
-      padding: 0.5em;
+      @include templateTitle();
+
+      .newTitle {
+        @include templateTitle();
+      }
+
     }
 
     .todo {
       background: lighten($grey, 20%);
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      margin: 6rem 0 4rem 14rem;
+
+      .todoTasks {
+        padding: 0.5rem;
+        margin: 10px;
+      }
+
+      hr {
+        border-bottom: 1px solid #dedede;
+        margin: 10px;
+        opacity: 0.5;
+      }
 
     }
 
