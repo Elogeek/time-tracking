@@ -32,8 +32,6 @@ $red: #eb4e4e;
   letter-spacing: 0.2px;
   color: $blue;
   padding: 0.5em;
-  position: absolute;
-  width: 100%;
 }
 
 body input {
@@ -42,22 +40,17 @@ body input {
 
 .container {
   display: $flex;
+  width: 60%;
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: nowrap;
-  width: 100%;
   margin-top: 1rem;
   padding: 1rem 0;
+  border: $border;
+  background: lighten(#c7c7c7,10%);
+  border-radius: 10px;
 
-  .project {
-    display: $flex;
-    border: $border;
-    background: lighten(#c7c7c7,10%);
-    width: 100%;
-    border-radius: 10px;
-    margin: 25px;
-
-    .title {
+  .title {
       @include templateTitle();
 
       .newTitle {
@@ -83,19 +76,18 @@ body input {
         margin: 10px;
         opacity: 0.5;
       }
-
     }
+
 
     .icons {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-end;
-      margin: 2rem;
+      margin: 2rem 52rem 2rem 2rem;
       width: 100%;
     }
 
   }
 
 
-}
