@@ -4,3 +4,4 @@ interface IStorage {
     setItem(key: string, value: string): void;
     removeItem(key: string): void;
 }
+

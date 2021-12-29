@@ -17,30 +17,50 @@ body {
   margin-top: 5rem;
 }
 
+/* Shortcut for to have it easier */
 $flex: flex;
 $border: 5px solid #c7c7c7;
 
+/* Colors */
 $grey: #c7c7c7;
 $blue: #6675c6;
 $green: #71ae98;
 $red: #eb4e4e;
 
-
+/* Design title project */
 @mixin templateTitle {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.2px;
   color: $blue;
   padding: 0.5em;
+  font-weight: bold;
+  text-decoration-line: underline;
+  font-size: medium;
+  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
 }
 
-body input {
-  margin-left: 1rem;
+/* Position and design input */
+body label {
+    display: $flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    input {
+      border: 3px solid $grey;
+    }
+
+    button {
+      background: $green;
+      color: lighten($grey, 20%);
+      padding: 1rem;
+      font-weight: bold;
+    }
+
 }
 
-.container {
+.container-project {
   display: $flex;
-  width: 60%;
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -49,8 +69,9 @@ body input {
   border: $border;
   background: lighten(#c7c7c7,10%);
   border-radius: 10px;
-/*
-  .title {
+
+  /* Design title project */
+  .titleProject {
       @include templateTitle();
 
       .newTitle {
@@ -59,37 +80,19 @@ body input {
 
     }
 
-    .todo {
+    /* Design list tasks of the project */
+    .tasksList {
       background: lighten($grey, 20%);
-      display: flex;
-      flex-direction: column;
-      width: 60%;
-      margin: 6rem 0 4rem 14rem;
-
-      .todoTasks {
-        padding: 0.5rem;
-        margin: 10px;
-      }
 
       hr {
         border-bottom: 1px solid #dedede;
         margin: 10px;
         opacity: 0.5;
       }
+
     }
 
-
-    .icons {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin: 2rem 52rem 2rem 2rem;
-      width: 100%;
-    }
-
- */
+    .icons {}
 
   }
-
 
