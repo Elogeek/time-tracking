@@ -8,7 +8,6 @@ export class Project {
 
     constructor(parentE: HTMLDivElement) {
         this.parentE = parentE;
-        this.parentE = document.querySelector(".container-project") as HTMLDivElement;
         this.init();
         this.createTitle();
         this.createTasksList();

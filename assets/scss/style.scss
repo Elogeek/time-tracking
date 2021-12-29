@@ -38,6 +38,7 @@ $red: #eb4e4e;
   text-decoration-line: underline;
   font-size: medium;
   text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+  height: 3rem;
 }
 
 /* Position and design input */
@@ -64,14 +65,17 @@ body label {
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: nowrap;
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: 1rem 0;
   border: $border;
   background: lighten(#c7c7c7,10%);
   border-radius: 10px;
+  height: 45rem;
+  width: 91rem;
+  margin-left: 15rem;
 
-  /* Design title project */
-  .titleProject {
+    /* Design title project */
+    .titleProject {
       @include templateTitle();
 
       .newTitle {
@@ -80,9 +84,47 @@ body label {
 
     }
 
+    .content-project {
+      width: 100rem;
+      height: 48rem;
+      display: $flex;
+      justify-content: space-around;
+      flex-wrap: nowrap;
+      align-items: center;
+      left: 10rem;
+      position: absolute;
+    }
+
+    .content-left {
+      width: 10rem;
+      height: 34rem;
+      font-size: 8rem;
+      display: flex;
+      flex-direction: column;
+
+      div {
+        margin-top: 3rem;
+      }
+
+    }
+
     /* Design list tasks of the project */
-    .tasksList {
+    .content-right {
+      width: 43rem;
+      height: 25rem;
       background: lighten($grey, 20%);
+      padding: 1rem;
+
+      .tasksList i {
+        font-size: 3rem;
+        justify-content: flex-end;
+        display: flex;
+      }
+
+      .tasksList {
+        font-size: 15px;
+        text-align: left;
+      }
 
       hr {
         border-bottom: 1px solid #dedede;
@@ -92,7 +134,25 @@ body label {
 
     }
 
-    .icons {}
+    .icons {
+      width: 100rem;
+      height: 7rem;
+      display: $flex;
+      justify-content: space-around;
+      flex-wrap: nowrap;
+      align-items: center;
+      position: absolute;
+      bottom: 21rem;
+
+      i {
+        font-size: 3rem;
+      }
+
+      span {
+        font-size: 20px;
+      }
+
+    }
 
   }
 
