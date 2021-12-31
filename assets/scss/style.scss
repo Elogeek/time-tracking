@@ -135,7 +135,7 @@ body label {
     }
 
     .icons {
-      width: 79rem;
+      width: 76rem;
       height: 7rem;
       display: $flex;
       justify-content: space-around;
@@ -154,11 +154,26 @@ body label {
         .fa-eye {
           color: $grey;
         }
+
+        .fa-plus {
+          color: $green;
+        }
+
+        &:hover {
+          font-weight: bold;
+          color:lighten(#B6FF00,10%);
+        }
+
       }
 
       span {
         font-size: 20px;
+        &:hover {
+          font-weight: bold;
+          color:lighten(#B6FF00,10%);
+        }
       }
+
 
     }
 
