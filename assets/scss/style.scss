@@ -33,12 +33,12 @@ $red: #eb4e4e;
   text-align: center;
   letter-spacing: 0.2px;
   color: $blue;
-  padding: 0.5em;
   font-weight: bold;
   text-decoration-line: underline;
   font-size: medium;
   text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
   height: 3rem;
+  padding: 2rem;
 }
 
 /* Position and design input */
@@ -70,8 +70,8 @@ body label {
   border: $border;
   background: lighten(#c7c7c7,10%);
   border-radius: 10px;
-  height: 45rem;
-  width: 91rem;
+  height: 47rem;
+  width: 71rem;
   margin-left: 15rem;
 
     /* Design title project */
@@ -85,32 +85,32 @@ body label {
     }
 
     .content-project {
-      width: 100rem;
-      height: 48rem;
+      width: 70rem;
+      height: 44rem;
       display: $flex;
       justify-content: space-around;
       flex-wrap: nowrap;
       align-items: center;
-      left: 10rem;
+      left: 15rem;
       position: absolute;
     }
 
     .content-left {
-      width: 10rem;
+      width: 2rem;
       height: 34rem;
       font-size: 8rem;
       display: flex;
       flex-direction: column;
 
       div {
-        margin-top: 3rem;
+        margin-top: 5rem;
       }
 
     }
 
     /* Design list tasks of the project */
     .content-right {
-      width: 43rem;
+      width: 47rem;
       height: 25rem;
       background: lighten($grey, 20%);
       padding: 1rem;
@@ -135,7 +135,7 @@ body label {
     }
 
     .icons {
-      width: 100rem;
+      width: 79rem;
       height: 7rem;
       display: $flex;
       justify-content: space-around;
@@ -146,6 +146,14 @@ body label {
 
       i {
         font-size: 3rem;
+
+        .fa-trash {
+          color: $blue;
+        }
+
+        .fa-eye {
+          color: $grey;
+        }
       }
 
       span {
