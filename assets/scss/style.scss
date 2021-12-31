@@ -37,7 +37,6 @@ $red: #eb4e4e;
   text-decoration-line: underline;
   font-size: medium;
   text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
-  height: 3rem;
   padding: 2rem;
 }
 
@@ -63,7 +62,7 @@ body label {
 .container-project {
   display: $flex;
   justify-content: space-around;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   margin-top: 2rem;
   padding: 1rem 0;
@@ -91,8 +90,6 @@ body label {
       justify-content: space-around;
       flex-wrap: nowrap;
       align-items: center;
-      left: 15rem;
-      position: absolute;
     }
 
     .content-left {
@@ -114,6 +111,8 @@ body label {
       height: 25rem;
       background: lighten($grey, 20%);
       padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 1px 1px 10px 3px black;
 
       .tasksList i {
         font-size: 3rem;
@@ -135,14 +134,11 @@ body label {
     }
 
     .icons {
-      width: 79rem;
-      height: 7rem;
       display: $flex;
       justify-content: space-around;
       flex-wrap: nowrap;
       align-items: center;
-      position: absolute;
-      bottom: 21rem;
+      margin-bottom: 2rem;
 
       i {
         font-size: 3rem;
@@ -152,7 +148,7 @@ body label {
         }
 
         .fa-eye {
-          color: $grey;
+          color: $grey !important;
         }
 
         .fa-plus {
