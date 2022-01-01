@@ -35,9 +35,10 @@ $red: #eb4e4e;
   color: $blue;
   font-weight: bold;
   text-decoration-line: underline;
-  font-size: medium;
+  font-size: large;
   text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
   padding: 2rem;
+  overflow: hidden;
 }
 
 /* Position and design input */
@@ -134,6 +135,7 @@ body label {
       .tasksList {
         font-size: 15px;
         text-align: left;
+        overflow: hidden;
       }
 
       hr {
