@@ -17,6 +17,11 @@ module.exports = (env, argv) => {
             },
         },
 
+        // file resolutions
+        resolve: {
+            extensions: [ '.ts', '.js', '.tsx', '.jsx' ],
+        },
+
         ...config
     }
 }

@@ -104,14 +104,9 @@ body label {
         margin-top: 5rem;
       }
 
-      i{
-        color: $green;
-        &:hover {
-          font-weight: bold;
-          color:lighten(#B6FF00,10%);
-        }
+      i {
+        color:$green;
       }
-
 
     }
 
