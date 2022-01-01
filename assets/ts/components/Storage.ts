@@ -7,7 +7,7 @@ export default class Storage {
 
     public get(key: string, ident:number): void {
         console.log(uuidv4());
-        // For random ident pour être sûr de ne pas se trompé de project
+        // For random ident to be sure not to get the wrong project
         uuidv4();
     }
 
@@ -24,7 +24,7 @@ export default class Storage {
     public delete(key:string):void{}
 
     /**
-     * Clear Localstorage ( click trash in the project) and delete project
+     * Clear Localstorage (click trash in the project) and delete project
      * @param key
      */
     public clear(key:string):void{}
