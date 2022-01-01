@@ -1,11 +1,14 @@
+import { v4 as uuidv4 } from 'uuid';
+
 /**
  * Constructor Storage
  */
 export default class Storage {
 
-
     public get(key: string): void {
-
+        console.log(uuidv4());
+        // For random name
+        uuidv4();
     }
 
     /**
