@@ -5,9 +5,9 @@ import { v4 as uuidv4 } from 'uuid';
  */
 export default class Storage {
 
-    public get(key: string): void {
+    public get(key: string, id:number): void {
         console.log(uuidv4());
-        // For random name
+        // For random identifiant pour être sûr de ne pas se trompé de project
         uuidv4();
     }
 
