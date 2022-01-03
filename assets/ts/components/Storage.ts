@@ -11,7 +11,7 @@ export default class Storage {
      * Create a key in the localstorage
      */
     public static createStore(key: string): Storage {
-        localStorage.setItem(uuidv4(),"");
+        localStorage.setItem(uuidv4());
         // @ts-ignore
         return Storage;
     }
