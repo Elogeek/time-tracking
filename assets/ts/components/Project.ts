@@ -2,62 +2,78 @@
 /**
  *  Class constructor project
  */
-
-export class Project {
+export default class Project {
     parentE: HTMLDivElement;
 
     constructor(parentE: HTMLDivElement) {
         this.parentE = parentE;
+        // @ts-ignore
         this.init();
+        // @ts-ignore
         this.createTitle();
-        this.createTasksList();
-        this.timeClock();
-        this.lastInteractionTracked();
-        this.createIcons();
+        //this.createTasksList();
+        //this.timeClock();
+        //this.lastInteractionTracked();
+        //this.createIcons();
     }
 
     /**
      *  initialization project
      */
-    init() {
+   static init() {
         this.createTitle();
-        this.createTasksList();
-        this.createIcons();
-        this.timeClock();
-        this.lastInteractionTracked();
+        //his.createTasksList();
+        //this.createIcons();
+        //this.timeClock();
+        //this.lastInteractionTracked();
     }
-
 
     /**
      * Create title project
      */
-    createTitle() {
-        let input = document.querySelector("#inputTittle") as HTMLInputElement;
-        let divInput = document.querySelector("span") as HTMLSpanElement;
-        let array: string;
-        array = input.value;
-        divInput.innerHTML = input.value;
-        console.log(array);
+    static createTitle() {
+        let divTitle = document.querySelector(".titleProject span") as HTMLElement;
+        let input = document.querySelector("#inputTitle") as HTMLInputElement;
+        let arrayTitle: string = <string>localStorage.getItem("projectName");
+        if(!arrayTitle) {
+            // @ts-ignore
+            arrayTitle = [];
+        }
+        else {
+            arrayTitle = JSON.parse(arrayTitle);
+        }
+
+        for(const title of arrayTitle) {
+            arrayTitle = input.value;
+            divTitle.innerHTML = input.value;
+            console.log(arrayTitle);
+        }
+
+
     }
 
     /**
      * Create tasks list project
-     */
+
     createTasksList() {
+        let div = document.querySelector(".content-right") as HTMLDivElement;
+        let todosTasks = localStorage.getItem("todosTasks");
+
+
 
         // chrono
     }
 
     /**
      * Create Icons project
-     */
+
     createIcons() {
         let divI = document.createElement("div") as HTMLDivElement;
         divI.className = "icons";
 
         /**
          * Icons
-         */
+
         let trash = document.createElement("i") as HTMLElement;
         trash.className = "fas fa-trash";
         trash.style.color = "#6675c6";
@@ -84,7 +100,7 @@ export class Project {
 
         /**
          * Action icons
-         */
+
         // @ts-ignore
         delete(e)
 
@@ -98,17 +114,18 @@ export class Project {
 
     /**
      * Calculate the total time spent on the project
-     */
+
     timeClock() {
 
     }
 
     /**
      * Time of the last interaction (the tracked time)
-     */
+
     lastInteractionTracked() {
 
     }
+    */
 
 }
 

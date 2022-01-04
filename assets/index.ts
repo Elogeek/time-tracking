@@ -1,5 +1,6 @@
 import Storage from "./ts/components/Storage";
 import { v4 as uuidv4 } from 'uuid';
+import Project from "./ts/components/Project";
 
 const uneConfig = Storage.getConfiguration('hello world',uuidv4());
 
@@ -7,6 +8,4 @@ const uneConfig = Storage.getConfiguration('hello world',uuidv4());
 console.log(uuidv4());
 
 // Test
-let a = document.querySelector(".container-project") as HTMLDivElement;
-// @ts-ignore
-a = Storage.clear();
+Project.init();

@@ -11,6 +11,7 @@ export default class Storage {
      * Create a key in the localstorage
      */
     public static createStore(key: string): Storage {
+        // @ts-ignore
         localStorage.setItem(uuidv4());
         // @ts-ignore
         return Storage;
@@ -65,15 +66,10 @@ export default class Storage {
      * @param projectName
      * @param ident
      */
-    public static getConfiguration(projectName: string, ident: string): Storage
-    {
+    public static getConfiguration(projectName: string, ident: string): Storage {
         // Vérifier si la clé existe dans le storage, si oui,
         // For random ident to be sure not to get the wrong project
         return new Storage(" ",uuidv4());
-
-
-
-
         // Si pas trouvé alors création d'une nouvelle configuration'
         //uuidv4();
         //return new Storage();
