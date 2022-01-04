@@ -10,6 +10,12 @@ export default class Project {
         // @ts-ignore
         this.init();
         // @ts-ignore
+        this.createForm();
+        // @ts-ignore
+        this.createInput();
+        // @ts-ignore
+        this.createTitle();
+        // @ts-ignore
         this.createTitle();
         //this.createTasksList();
         //this.timeClock();
@@ -20,12 +26,47 @@ export default class Project {
     /**
      *  initialization project
      */
-   static init() {
+    static init() {
+        this.createForm();
+        this.createInput();
         this.createTitle();
         //his.createTasksList();
         //this.createIcons();
         //this.timeClock();
         //this.lastInteractionTracked();
+    }
+
+    static createForm(){
+        let divForm = document.createElement('div');
+        divForm.id = 'divForm';
+        let form = document.createElement('form');
+        form.className = 'form';
+
+        // @ts-ignore
+        this.parentE.append(divForm);
+        divForm.append(form);
+    }
+
+    static createInput() {
+        let divInput = document.createElement("div");
+        let input = document.createElement("input");
+        let submit = document.createElement("input");
+        let form = document.querySelector(".form");
+
+        input.type = "text";
+        input.placeholder = "Ajouter un projet";
+        input.id = "projectName";
+
+        submit.id = "add";
+        submit.type = "submit";
+        submit.name = "submit";
+        submit.value = "Ajouter";
+
+        // @ts-ignore
+        form.append(divInput);
+        divInput.append(input);
+        divInput.append(submit);
+
     }
 
     /**
@@ -126,6 +167,5 @@ export default class Project {
 
     }
     */
-
 }
 

@@ -7,50 +7,55 @@
     <title>Time tracker</title>
 </head>
 <body>
-    <!-- Add a new projet (title) -->
-    <div>
-        <label for="inputTitle">
-            <input type="text" id="inputTitle">
-            <button type="submit" id="btnAdd">Ajouter un projet</button>
-        </label>
-    </div>
-
-    <div class="container-project">
-        <div class="titleProject">
-            <span>Mon super project à tracker</span>
+    <div class="container">
+        <h1>time tracker</h1>
+        <!-- Add a new projet (title) -->
+        <div id="divForm">
+            <form>
+                <div class="divInput">
+                    <input type="text"  placeholder="Ajouter un projet" id="projectName">
+                    <button type="submit" id="btnAdd">Ajouter</button>
+                </div>
+            </form>
         </div>
-       <div class="content-project">
-           <div class="content-left">
-                <div>
-                   <i class="far fa-clock"></i>
-                </div>
-                <div>
-                 <i class="far fa-calendar-alt"></i>
-                </div>
-           </div>
-           <div class="content-right">
-               <p class="tasksList">
-                   ghhtgg
-                   <i class="fas fa-stopwatch"></i>
-               </p>
-               <hr>
-               <p class="tasksList">
-                   gffghf
-                   <i class="fas fa-stopwatch"></i>
-               </p>
-               <hr>
-               <p class="tasksList">
-                   thyujyy
-                   <i class="fas fa-stopwatch"></i>
-               </p>
-               <hr>
-           </div>
-       </div>
 
-        <div class="icons">
-            <i class="fas fa-trash"></i>
-            <i class="far fa-eye"></i>
-            <i class="fas fa-plus"></i>
+        <div class="container-project">
+            <div class="titleProject">
+                <span>Mon super project à tracker</span>
+            </div>
+           <div class="content-project">
+               <div class="content-left">
+                    <div>
+                       <i class="far fa-clock"></i>
+                    </div>
+                    <div>
+                     <i class="far fa-calendar-alt"></i>
+                    </div>
+               </div>
+               <div class="content-right">
+                   <p class="tasksList">
+                       ghhtgg
+                       <i class="fas fa-stopwatch"></i>
+                   </p>
+                   <hr>
+                   <p class="tasksList">
+                       gffghf
+                       <i class="fas fa-stopwatch"></i>
+                   </p>
+                   <hr>
+                   <p class="tasksList">
+                       thyujyy
+                       <i class="fas fa-stopwatch"></i>
+                   </p>
+                   <hr>
+               </div>
+           </div>
+
+            <div class="icons">
+                <i class="fas fa-trash"></i>
+                <i class="far fa-eye"></i>
+                <i class="fas fa-plus"></i>
+            </div>
         </div>
     </div>
 
