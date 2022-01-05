@@ -49,7 +49,6 @@ $red: #eb4e4e;
       height: 3.5rem;
       padding: 1rem;
       text-align: left;
-      border: 2px solid $green;
     }
 
     input[type="text"] {
@@ -60,21 +59,15 @@ $red: #eb4e4e;
       outline: none;
       border-color: #828282;
       box-shadow: 0 0 10px #828282;
+      height: 3.5rem;
     }
 
-    input[type="submit"] {
+    #btnAdd {
       width: 8rem;
-      color: $green;
+      color: #828282;
       border-radius: 0 .8rem .8rem 0;
       margin-bottom: 2rem;
-    }
-
-    input[type="submit"], input[type="text"] {
       height: 3.5rem;
-      border: 3px solid $green;
-    }
-
-    input[type="submit"] {
       cursor: pointer;
     }
 
@@ -206,5 +199,6 @@ $red: #eb4e4e;
     }
 
   }
+
 
 // Responsive mode

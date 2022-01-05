@@ -1,27 +1,29 @@
 
 /**
  *  Class constructor project
+ */
 
 export default class Project {
     parentE: HTMLDivElement;
 
-   // constructor(parentE: HTMLDivElement) {
-   //     this.parentE = parentE;
+    constructor(parentE: HTMLDivElement) {
+        this.parentE = parentE;
+         //@ts-ignore
+        this.init();
         // @ts-ignore
-    //    this.init();
+        this.createTitle();
+         //@ts-ignore
+        this.createTitle();
+        this.createTasksList();
+        this.timeClock();
         // @ts-ignore
-    //    this.createTitle();
-        // @ts-ignore
-    //    this.createTitle();
-        //this.createTasksList();
-        //this.timeClock();
-        //this.lastInteractionTracked();
-        //this.createIcons();
+        this.lastInteractionTracked();
+        this.createIcons();
     }
 
     /**
      *  initialization project
-
+     */
     static init() {
         this.createTitle();
         //his.createTasksList();
@@ -32,7 +34,7 @@ export default class Project {
 
     /**
      * Create title project
-
+     */
     static createTitle() {
         let divTitle = document.querySelector(".titleProject span") as HTMLElement;
         let input = document.querySelector("#inputTitle") as HTMLInputElement;
@@ -55,7 +57,7 @@ export default class Project {
 
     /**
      * Create tasks list project
-
+     */
     createTasksList() {
         let div = document.querySelector(".content-right") as HTMLDivElement;
         let todosTasks = localStorage.getItem("todosTasks");
@@ -67,14 +69,14 @@ export default class Project {
 
     /**
      * Create Icons project
-
+     */
     createIcons() {
         let divI = document.createElement("div") as HTMLDivElement;
         divI.className = "icons";
 
         /**
          * Icons
-
+         */
         let trash = document.createElement("i") as HTMLElement;
         trash.className = "fas fa-trash";
         trash.style.color = "#6675c6";
@@ -101,7 +103,7 @@ export default class Project {
 
         /**
          * Action icons
-
+         */
         // @ts-ignore
         delete(e)
 
@@ -115,7 +117,7 @@ export default class Project {
 
     /**
      * Calculate the total time spent on the project
-
+     */
     timeClock() {
 
     }
@@ -129,4 +131,4 @@ export default class Project {
     */
 }
 
-*/
+
