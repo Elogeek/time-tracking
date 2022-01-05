@@ -1,6 +1,6 @@
 // import Storage from "./ts/components/Storage";
 import { v4 as uuidv4 } from 'uuid';
-import Project from "./ts/components/Project";
+//import Project from "./ts/components/Project";
 
 //const uneConfig = Storage.getConfiguration('hello world',uuidv4());
 
@@ -8,4 +8,4 @@ import Project from "./ts/components/Project";
 console.log(uuidv4());
 
 // Test
-Project.init();
+//Project.init();

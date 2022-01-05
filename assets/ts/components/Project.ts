@@ -1,22 +1,18 @@
 
 /**
  *  Class constructor project
- */
+
 export default class Project {
     parentE: HTMLDivElement;
 
-    constructor(parentE: HTMLDivElement) {
-        this.parentE = parentE;
+   // constructor(parentE: HTMLDivElement) {
+   //     this.parentE = parentE;
         // @ts-ignore
-        this.init();
+    //    this.init();
         // @ts-ignore
-        this.createForm();
+    //    this.createTitle();
         // @ts-ignore
-        this.createInput();
-        // @ts-ignore
-        this.createTitle();
-        // @ts-ignore
-        this.createTitle();
+    //    this.createTitle();
         //this.createTasksList();
         //this.timeClock();
         //this.lastInteractionTracked();
@@ -25,10 +21,8 @@ export default class Project {
 
     /**
      *  initialization project
-     */
+
     static init() {
-        this.createForm();
-        this.createInput();
         this.createTitle();
         //his.createTasksList();
         //this.createIcons();
@@ -36,42 +30,9 @@ export default class Project {
         //this.lastInteractionTracked();
     }
 
-    static createForm(){
-        let divForm = document.createElement('div');
-        divForm.id = 'divForm';
-        let form = document.createElement('form');
-        form.className = 'form';
-
-        // @ts-ignore
-        this.parentE.append(divForm);
-        divForm.append(form);
-    }
-
-    static createInput() {
-        let divInput = document.createElement("div");
-        let input = document.createElement("input");
-        let submit = document.createElement("input");
-        let form = document.querySelector(".form");
-
-        input.type = "text";
-        input.placeholder = "Ajouter un projet";
-        input.id = "projectName";
-
-        submit.id = "add";
-        submit.type = "submit";
-        submit.name = "submit";
-        submit.value = "Ajouter";
-
-        // @ts-ignore
-        form.append(divInput);
-        divInput.append(input);
-        divInput.append(submit);
-
-    }
-
     /**
      * Create title project
-     */
+
     static createTitle() {
         let divTitle = document.querySelector(".titleProject span") as HTMLElement;
         let input = document.querySelector("#inputTitle") as HTMLInputElement;
@@ -89,7 +50,6 @@ export default class Project {
             divTitle.innerHTML = input.value;
             console.log(arrayTitle);
         }
-
 
     }
 
@@ -169,3 +129,4 @@ export default class Project {
     */
 }
 
+*/

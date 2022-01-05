@@ -8,13 +8,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>time tracker</h1>
+
+        <h1>time tracker <i class="fas fa-business-time"></i></h1>
         <!-- Add a new projet (title) -->
         <div id="divForm">
             <form>
-                <div class="divInput">
-                    <input type="text"  placeholder="Ajouter un projet" id="projectName">
-                    <button type="submit" id="btnAdd">Ajouter</button>
+                <div id="divInput">
+                    <input type="text"  placeholder="Ajouter un nom de projet..." id="projectName"/>
+                    <input type="submit" name="submit" id="btnAdd" value="Ajouter"/>
                 </div>
             </form>
         </div>
@@ -57,6 +58,7 @@
                 <i class="fas fa-plus"></i>
             </div>
         </div>
+
     </div>
 
     <script src="./build/js/front.js"></script>
