@@ -52,5 +52,23 @@
         window.style.display = "none";
     }
 
+    /**
+     *  Add item in the taskList
+     */
+    function addItemTaskList() {
+        let more = document.getElementById("moreBtn") as HTMLElement;
+        more.addEventListener("click", showModal);
+
+        let content = document.querySelector(".content-window") as HTMLElement;
+        let input = document.createElement("input") as HTMLInputElement;
+        input.placeholder = "New work...";
+        let btn = document.createElement("button") as HTMLButtonElement;
+        btn.innerHTML = "Ajouter dans ma liste";
+
+        content.append(input);
+        content.append(btn);
+
+    }
+
 
 
