@@ -17,6 +17,7 @@
         contentWindow.className ="content-window";
 
         let btn = document.createElement("button");
+        btn.className = "closed-window"
         btn.innerHTML = "Closed";
 
         // Position the modal window
@@ -43,6 +44,9 @@
     /**
      *  Hidden modal
      */
+    let closedWindow = document.querySelector(".closed-window") as HTMLButtonElement;
+    closedWindow.addEventListener("click", destroyModal);
+
     function destroyModal() {
         let window = document.querySelector(".overlay") as HTMLElement;
         window.style.display = "none";
