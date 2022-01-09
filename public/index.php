@@ -3,15 +3,13 @@ require_once "../vendor/autoload.php";
 use RedBeanPHP\R;
 use RedBeanPHP\RedException\SQL;
 
-R::setup("mysql:host=localhost;dbname=redbean-dev","dev", "dev");
+R::setup("mysql:host=localhost;dbname=time_tracking","dev", "dev");
 
 // Create a table
-
 $project = R::dispense('project');
 
 // Add datas in the table project
 $project->name = "Mon super project test";
-$project->price = 500;
 
 try {
     $insertId = R::store($project);
