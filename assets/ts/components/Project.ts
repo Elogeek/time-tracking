@@ -11,10 +11,10 @@ export default class Project {
          //@ts-ignore
         this.init();
         // @ts-ignore
-        this.createTitle();
+        this.title();
          //@ts-ignore
-        this.createTitle();
-        this.createTasksList();
+        this.title();
+        this.tasksList();
         this.timeClock();
         // @ts-ignore
         this.lastInteractionTracked();
@@ -25,8 +25,8 @@ export default class Project {
      *  initialization project
      */
     static init() {
-        this.createTitle();
-        //his.createTasksList();
+        //this.title();
+        //his.tasksList();
         //this.createIcons();
         //this.timeClock();
         //this.lastInteractionTracked();
@@ -34,8 +34,8 @@ export default class Project {
 
     /**
      * Create title project
-     */
-    static createTitle() {
+
+    static title() {
         let divTitle = document.querySelector(".titleProject span") as HTMLElement;
         let input = document.querySelector("#inputTitle") as HTMLInputElement;
         let arrayTitle: string = <string>localStorage.getItem("projectName");
@@ -53,12 +53,13 @@ export default class Project {
             console.log(arrayTitle);
         }
 
-    }
+        return arrayTitle;
+    }*/
 
     /**
      * Create tasks list project
      */
-    createTasksList() {
+    tasksList() {
         let div = document.querySelector(".content-right") as HTMLDivElement;
         let todosTasks = localStorage.getItem("todosTasks");
 
