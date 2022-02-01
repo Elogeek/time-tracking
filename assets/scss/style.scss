@@ -176,6 +176,11 @@ $red: #eb4e4e;
       align-items: center;
       margin-bottom: 2rem;
 
+      button {
+        border: none;
+        background: transparent;
+      }
+
       i {
         font-size: 3rem;
         color: $blue;
@@ -211,6 +216,10 @@ $red: #eb4e4e;
       margin-left: 1rem;
     }
 
+    .startButton {
+      border: none;
+      background: transparent;
+    }
     .startButton i {
       color: $green;
     }
