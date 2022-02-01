@@ -1,3 +1,5 @@
+let { Timer } = require('lib/easytimer/dist/easytimer.min.js');
+
 
 /**
  *  Class constructor project

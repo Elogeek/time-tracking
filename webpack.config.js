@@ -2,56 +2,73 @@ require('webpack');
 const path = require('path');
 
 module.exports = (env, argv) => {
+
     const config = argv.mode === 'development' ? devConfig() : prodConfig();
+
     return {
         entry: {
-            front: "./assets/index.ts",
+            main: './assets/index.ts',
         },
 
         output: {
             path: path.resolve(__dirname, 'public'),
             filename: "build/js/[name].js",
-            publicPath: "/",
+            publicPath: '/',
             clean: {
-                keep: /index\.html|index\.php|View|css/,
-            },
+                keep: /index\.html|index\.php/,
+            }
         },
-
         // file resolutions
         resolve: {
-            extensions: [ '.ts', '.js', '.tsx', '.jsx' ],
+            extensions: [ '.ts', '.js' ],
         },
 
+        // loaders
+        module: {
+            rules: [
+                {
+                    test: /\.tsx?/,
+                    use: 'ts-loader',
+                    exclude: /node_modules/,
+                }
+            ]
+        },
+
+        // Push de la config prod ou dev
         ...config
     }
-}
+};
+
 
 /**
- * Mode dev
+ * Development mode configuration
+ * @type {{}}
  */
-function devConfig() {
+const devConfig = () => {
 
     return {
+        target: 'web',
         mode: 'development',
+
         devtool: 'source-map',
+
         module: {
             rules: [
                 {
                     test: /\.(s)css$/i,
-                    use: ["style-loader", "css-loader", "sass-loader"]
+                    use: ["style-loader", {loader: "css-loader", options: {sourceMap: true}}, "sass-loader"],
                 },
                 {
                     test: /\.tsx?$/,
                     use: 'ts-loader',
                     exclude: /node_modules/,
                 },
-                /* Règles fichiers images
                 {
-                    test: /\.(png|jpe?g|gif|webp)$/i,
-                    type: 'assets/resource',
+                    test: /\.(png|jpe?g|gif)$/i,
+                    type: 'asset/resource',
                     generator: {filename: 'build/images/[name][ext]'}
-                },*/
-            ]
+                },
+            ],
         },
 
         devServer: {
@@ -62,19 +79,22 @@ function devConfig() {
                 watch: true,
             },
             compress: true,
-            port: 9000,
+            port: 8000,
             hot: true,
             open: true,
         },
 
-        optimization: {minimize: false}
+        optimization: {minimize: false},
     }
 }
 
+
 /**
- * Mode production
+ * Production mode configuration
+ * @type {{}}
  */
-function prodConfig() {
+const prodConfig = () => {
+    // Require plugins important mode prod
     const MiniCssExtractPlugin = require("mini-css-extract-plugin");
     const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
     const TerserPlugin = require("terser-webpack-plugin");
@@ -85,15 +105,15 @@ function prodConfig() {
             rules: [
                 {
                     test: /\.(s)css$/i,
-                    use: [MiniCssExtractPlugin.loader, "scss-loader", "sass-loader"]
+                    use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
                 },
-
-                /* Règles fichiers images
                 {
-                    test: /\.(png|jpe?g|gif|webp)$/i,
+                    test: /\.(png|jpe?g|gif)$/i,
                     type: 'asset/resource',
-                    generator: {filename: 'build/images/[name][ext]'}
-                }, */
+                    generator: {
+                        filename: 'build/images/[name][ext]'
+                    }
+                },
                 {
                     test: /\.(m)js$/,
                     loader: 'babel-loader',
@@ -103,17 +123,21 @@ function prodConfig() {
                         exclude: ['/assets/specs']
                     }
                 },
-
-            ]
+                {
+                    test: /\.tsx?$/,
+                    use: 'ts-loader',
+                    exclude: /node_modules/,
+                },
+            ],
         },
 
         optimization: {
             minimize: true,
-            minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
+            minimizer: [new TerserPlugin(), new CssMinimizerPlugin(),],
         },
 
         plugins: [
-            new MiniCssExtractPlugin({ filename: "build/css/[name].css", })
-        ]
-    }
-}
+            new MiniCssExtractPlugin({filename: "build/css/[name].css",}),
+        ],
+    };
+};
